@@ -3,12 +3,6 @@ import { nestedNavLinksLoop } from './navigation/helpers/nav.js';
 import Data from './navigation/config/data.json';
 
 function navbar() {
-
-  // Set nav type
-  const navType = document.getElementById('nav-id');
-  const navTypeData = Data.navigation['nav-id'];
-  navType.classList.add(navTypeData);
-
   const navId = {
           "data": Data.navigation['nav-id'],
           "elem": document.getElementById('nav-id')
