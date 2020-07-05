@@ -1,6 +1,6 @@
 {
-  "name": "webpack-library",
-  "version": "1.0.0",
+  "name": "library",
+  "version": "0.0.1",
   "description": "",
   "main": "index.hbs",
   "scripts": {
@@ -10,7 +10,7 @@
     "build": "webpack"
   },
   "keywords": [],
-  "author": "",
+  "author": "Emily Buonauro",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.4",
