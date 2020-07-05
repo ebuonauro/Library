@@ -1,6 +1,6 @@
 import './style.scss';
-import { nestedNavLinksLoop } from './component/helpers/nav.js';
-import Data from './component/config/data.json';
+import { nestedNavLinksLoop } from './navigation/helpers/nav.js';
+import Data from './navigation/config/data.json';
 
 function navbar() {
 
