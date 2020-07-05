@@ -5,6 +5,8 @@ import './style.scss';
 // Navigation
 import { nestedDataHelper } from './components/navigation/helpers/nav.js';
 import Nav from './components/navigation/config/data.json';
+// Hero
+import Hero from './components/hero/config/data.json';
 
 // PARTIALS //
 // Search w/ Autocomplete
@@ -32,11 +34,20 @@ function componentNavbar() {
   nestedDataHelper(navLinks.data, navLinks.elem);
   }
 
-  function partialSearchWithAutocomplete() {
-    const searchInput = document.getElementById('typeahead');
-    autocompleteWithKeywords(Results, searchInput)
-  };
+function componentHero() {
+  document.querySelector('.main-text').innerHTML = Hero.hero['main-text'];
+  document.querySelector('.lead-text').innerHTML = Hero.hero['lead-text'];
+
+  console.log(document.querySelector('.main-text').innerHTML );
+}
+
+function partialSearchWithAutocomplete() {
+  const searchInput = document.getElementById('typeahead');
+  autocompleteWithKeywords(Results, searchInput)
+};
 
 componentNavbar(); 
+componentHero();
+
 partialSearchWithAutocomplete()
 
