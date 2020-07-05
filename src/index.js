@@ -1,6 +1,8 @@
 import './style.scss';
-import { nestedDataHelper } from './navigation/helpers/nav.js';
-import Nav from './navigation/config/data.json';
+import './partials/typeahead/assets/awesomeplete.js';
+import './partials/typeahead/assets/awesomeplete.scss';
+import { nestedDataHelper } from './components/navigation/helpers/nav.js';
+import Nav from './components/navigation/config/data.json';
 
 function navbar() {
   const navId = {
