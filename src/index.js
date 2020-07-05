@@ -1,12 +1,23 @@
+// GLOBAL STYLES //
 import './style.scss';
-import { nestedDataHelper } from './navigation/helpers/nav.js';
-import Nav from './navigation/config/data.json';
 
-function navbar() {
+// COMPONENTS //
+// Navigation
+import { nestedDataHelper } from './components/navigation/helpers/nav.js';
+import Nav from './components/navigation/config/data.json';
+
+// PARTIALS //
+// Search w/ Autocomplete
+import './partials/typeahead/assets/awesomeplete.js';
+import './partials/typeahead/assets/awesomeplete.scss';
+import Results from './partials/typeahead/config/data.json';
+import { autocompleteWithKeywords } from './partials/typeahead/helpers/typeahead.js';
+
+function componentNavbar() {
   const navId = {
           "data": Nav.navigation['nav-id'],
           "elem": document.getElementById('nav-id')
-          },
+        },
         branding = {
           "data": Nav.navigation['branding'],
           "elem": document.getElementById('branding')
@@ -19,8 +30,13 @@ function navbar() {
   navId.elem.classList.add(navId.data);
   branding.elem.innerHTML = branding.data;
   nestedDataHelper(navLinks.data, navLinks.elem);
-
   }
-  
-  navbar();
+
+  function partialSearchWithAutocomplete() {
+    const searchInput = document.getElementById('typeahead');
+    autocompleteWithKeywords(Results, searchInput)
+  };
+
+componentNavbar(); 
+partialSearchWithAutocomplete()
 
