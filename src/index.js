@@ -1,5 +1,5 @@
 import './style.scss';
-import { nestedNavLinksLoop } from './navigation/helpers/nav.js';
+import { nestedDataHelper } from './navigation/helpers/nav.js';
 import Data from './navigation/config/data.json';
 
 function navbar() {
@@ -13,15 +13,12 @@ function navbar() {
         },
         navLinks = {
           "data": Data.navigation['nav-links'],
-          "elem": document.getElementById('nav-link-container')
+          "elem": document.querySelector('.navbar-nav')
         }
 
   navId.elem.classList.add(navId.data);
   branding.elem.innerHTML = branding.data;
-  nestedNavLinksLoop(navLinks.data, navLinks.elem);
-
-
-
+  nestedDataHelper(navLinks.data, navLinks.elem);
 
   }
   
