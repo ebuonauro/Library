@@ -34,7 +34,6 @@ function componentNavbar() {
 
   function partialSearchWithAutocomplete() {
     const searchInput = document.getElementById('typeahead');
-
     autocompleteWithKeywords(Results, searchInput)
   };
 

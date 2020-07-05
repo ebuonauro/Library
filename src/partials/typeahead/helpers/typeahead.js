@@ -1,24 +1,18 @@
-export function autocompleteWithKeywords(resultsData, searchInputElem) {
+export function autocompleteWithKeywords(resultsData, optionsElem) {
   let i = 0;
+  let resultOptions = [];
   for (const [key, value] of Object.entries(resultsData['components'])) {
-    let resultOption = resultsData.components[i];
-    // list.push(resultOption);
+    let resultOption = resultsData.components[i]["name"];
+    resultOptions.push(resultOption);
+    createListItemsForDynamicOptions(resultOption)
     i++;
   }
+  new Awesomplete(optionsElem, {list: "#options"});
+}
 
-  new Awesomplete(searchInputElem, {
-    list: [
-      {
-        "label": "Navigation",
-        "value": "global header sections section"
-      },
-      {
-        "label": "Simple Search Input with Autocomplete",
-        "value": "find global widgets ypeahead type widget"
-      }
-    ],
-    replace: function(suggestion) {
-      this.input.value = suggestion.label;
-    }
-  })
+function createListItemsForDynamicOptions(resultOption) {
+  const listItem = document.createElement("li");
+  let itemContent = document.createTextNode(resultOption); 
+  listItem.appendChild(itemContent); 
+  document.getElementById('options').appendChild(listItem); 
 }
