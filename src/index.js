@@ -1,18 +1,18 @@
 import './style.scss';
 import { nestedDataHelper } from './navigation/helpers/nav.js';
-import Data from './navigation/config/data.json';
+import Nav from './navigation/config/data.json';
 
 function navbar() {
   const navId = {
-          "data": Data.navigation['nav-id'],
+          "data": Nav.navigation['nav-id'],
           "elem": document.getElementById('nav-id')
           },
         branding = {
-          "data": Data.navigation['branding'],
+          "data": Nav.navigation['branding'],
           "elem": document.getElementById('branding')
         },
         navLinks = {
-          "data": Data.navigation['nav']['links'],
+          "data": Nav.navigation['nav']['links'],
           "elem": document.querySelector('.navbar-nav')
         }
 
