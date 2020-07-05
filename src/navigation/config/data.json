@@ -2,11 +2,29 @@
   "navigation": {
     "nav-id": "default",
     "branding": "Component Categories",
-    "nav-links": {
-      "link-text-1": "Helpers",
-      "link-text-2": "Navigation",
-      "link-text-3": "Widgets",
-      "link-text-4": "Sections"
+    "nav": {
+      "links": [
+        {
+          "link-text": "Helpers",
+          "link-url": "#helpers",
+          "link-type": "anchor"
+        },
+        {
+          "link-text": "Widgets",
+          "link-url": "#widgets",
+          "link-type": "anchor"
+        },
+        {
+          "link-text": "Sections",
+          "link-url": "#sections",
+          "link-type": "anchor"
+        },
+        {
+          "link-text": "Report Bug",
+          "link-url": "https://github.com/ebuonauro/Library/issues",
+          "link-type": "ext"
+        }
+      ] 
     }
   }
 }

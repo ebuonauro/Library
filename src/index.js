@@ -1,33 +1,24 @@
 import './style.scss';
-import { nestedNavLinksLoop } from './navigation/helpers/nav.js';
-import Data from './navigation/config/data.json';
+import { nestedDataHelper } from './navigation/helpers/nav.js';
+import Nav from './navigation/config/data.json';
 
 function navbar() {
-
-  // Set nav type
-  const navType = document.getElementById('nav-id');
-  const navTypeData = Data.navigation['nav-id'];
-  navType.classList.add(navTypeData);
-
   const navId = {
-          "data": Data.navigation['nav-id'],
+          "data": Nav.navigation['nav-id'],
           "elem": document.getElementById('nav-id')
           },
         branding = {
-          "data": Data.navigation['branding'],
+          "data": Nav.navigation['branding'],
           "elem": document.getElementById('branding')
         },
         navLinks = {
-          "data": Data.navigation['nav-links'],
-          "elem": document.getElementById('nav-link-container')
+          "data": Nav.navigation['nav']['links'],
+          "elem": document.querySelector('.navbar-nav')
         }
 
   navId.elem.classList.add(navId.data);
   branding.elem.innerHTML = branding.data;
-  nestedNavLinksLoop(navLinks.data, navLinks.elem);
-
-
-
+  nestedDataHelper(navLinks.data, navLinks.elem);
 
   }
   
