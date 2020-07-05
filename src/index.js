@@ -12,7 +12,7 @@ function navbar() {
           "elem": document.getElementById('branding')
         },
         navLinks = {
-          "data": Data.navigation['nav-links'],
+          "data": Data.navigation['nav']['links'],
           "elem": document.querySelector('.navbar-nav')
         }
 
