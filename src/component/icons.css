@@ -1,8 +1,0 @@
-@font-face {
-    font-family: 'Icons';
-    src:    url('./icomoon.woff') format('woff2'),
-            url('./icomoon.ttf') format('ttf'),
-            url('./icomoon.eot') format('eot');
-    font-weight: 400;
-    font-style: normal;
-}
