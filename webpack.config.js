@@ -18,7 +18,12 @@ module.exports = {
       cleanStaleWebpackAssets: false 
     }),
     new HtmlWebpackPlugin({
-      title: 'Output Management',
+      filename: 'index.html',
+      template: './src/templates/default.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'page.html',
+      template: './src/templates/default.html'
     })
   ],
   output: {
@@ -27,7 +32,6 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.hbs$/, loader: __dirname + "?helperDirs[]=" + __dirname + "./src/component/helpers" },
       {
         test: /\.s[ac]ss$/i,
         use: [
@@ -35,6 +39,11 @@ module.exports = {
           'css-loader',
           'sass-loader',
         ],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"]
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/,
