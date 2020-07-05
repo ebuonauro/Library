@@ -13,3 +13,20 @@ footer {
   opacity: 0;
   z-index: -1;
 }
+
+.card-container {
+  margin-bottom: 30px;
+}
+@media (min-width: 992px) {
+  .card {
+    margin-right: 30px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .form-inline {
+    .form-control {
+      min-width: 300px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "card-row": {
+    "cards": [
+      {
+        "card-title": "Helpers",
+        "card-text": "Helpers quietly enhance lives of users for non-standard situations. Examples include scripts that add keyboard functionality, styles that help in wayfinding for the user when that's applicable such as pagination and breadcrumbs, and microinteractions."
+      },
+      {
+        "card-title": "Widgets",
+        "card-text": "Widgets are independent partial components which are meant to add plug and play functionality to landing pages. Examples include the search typeahead, carousels, and modals/lightboxes."
+      },
+      {
+        "card-title": "Sections",
+        "card-text": "The majority of components are sections, which represent the majority of the html/css/scripts that build the website. Examples include the navigation, hero, and this card section as well."
+      }
+    ]
+  }
+}
