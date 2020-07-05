@@ -7,6 +7,9 @@ import { nestedDataHelper } from './components/navigation/helpers/nav.js';
 import Nav from './components/navigation/config/data.json';
 // Hero
 import Hero from './components/hero/config/data.json';
+// Cards
+import { loopThroughCards } from './components/card-row/helpers/card-row.js';
+import Cards from './components/card-row/config/data.json';
 
 // PARTIALS //
 // Search w/ Autocomplete
@@ -37,8 +40,10 @@ function componentNavbar() {
 function componentHero() {
   document.querySelector('.main-text').innerHTML = Hero.hero['main-text'];
   document.querySelector('.lead-text').innerHTML = Hero.hero['lead-text'];
+}
 
-  console.log(document.querySelector('.main-text').innerHTML );
+function componentCardRow() {
+  loopThroughCards(Cards);
 }
 
 function partialSearchWithAutocomplete() {
@@ -48,6 +53,7 @@ function partialSearchWithAutocomplete() {
 
 componentNavbar(); 
 componentHero();
+componentCardRow();
 
 partialSearchWithAutocomplete()
 
