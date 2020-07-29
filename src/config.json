@@ -27,13 +27,6 @@
       "keywords": [
         "columns", "cards", "tile"
       ]
-    },
-    {
-      "name": "Footer",
-      "category": "section",
-      "keywords": [
-        "global", "copyright", "copy", "license", "credits"
-      ]
     }
   ]
 }

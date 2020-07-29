@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('../../');
 
 module.exports = {
   mode: 'development',
@@ -19,12 +20,19 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './src/templates/default.html'
+      template: './src/templates/default.html',
     }),
     new HtmlWebpackPlugin({
       filename: 'page.html',
       template: './src/templates/default.html'
-    })
+    }),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './partials/analytics.html'),
+        priority: 'high',
+        location: 'head'
+      }
+    ])
   ],
   output: {
     filename: '[name].bundle.js',
