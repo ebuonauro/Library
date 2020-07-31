@@ -1,4 +1,7 @@
+// Pass in the parent of the nested data
+// Also pass in the parent container of the nav links
 export function nestedDataHelper(nestedDataParent, navLinksParent) {
+  // Clear the dummy data if there is any
   navLinksParent.innerHTML = '';
 
   // Loop through navigation object

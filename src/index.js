@@ -14,9 +14,9 @@ import Cards from './components/card-row/config/data.json';
 
 // PARTIALS //
 // Search w/ Autocomplete
-import './partials/typeahead/assets/awesomeplete.js';
-import './partials/typeahead/assets/awesomeplete.scss';
-import { autocompleteWithKeywords } from './partials/typeahead/helpers/typeahead.js';
+import './components/typeahead/assets/awesomeplete.js';
+import './components/typeahead/assets/awesomeplete.scss';
+import { autocompleteWithKeywords } from './components/typeahead/helpers/typeahead.js';
 
 function componentNavbar() {
   const navId = {
@@ -35,7 +35,7 @@ function componentNavbar() {
   navId.elem.classList.add(navId.data);
   branding.elem.innerHTML = branding.data;
   nestedDataHelper(navLinks.data, navLinks.elem);
-  }
+}
 
 function componentHero() {
   document.querySelector('.main-text').innerHTML = Hero.hero['main-text'];
@@ -55,5 +55,4 @@ componentNavbar();
 componentHero();
 componentCardRow();
 
-partialSearchWithAutocomplete()
-
+partialSearchWithAutocomplete();
