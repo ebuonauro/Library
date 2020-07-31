@@ -4,35 +4,43 @@
       "name": "Navigation",
       "category": "section",
       "keywords": [
-        "global", "header", "sections", "section"
+        "global", 
+        "header", 
+        "sections", 
+        "section"
       ]
     },
     {
       "name": "Search with Autocomplete",
       "category": "widgets",
       "keywords": [
-        "find", "global", "widgets", "typeahead", "type", "widget"
+        "find", 
+        "global", 
+        "widgets", 
+        "typeahead", 
+        "type", 
+        "widget"
       ]
     },
     {
       "name": "Hero",
       "category": "section",
       "keywords": [
-        "section", "header", "cta", "call to action", "top", "jumbotron"
+        "section", 
+        "header", 
+        "cta", 
+        "call to action", 
+        "top", 
+        "jumbotron"
       ]
     },
     {
       "name": "Card Tiles",
       "category": "section",
       "keywords": [
-        "columns", "cards", "tile"
-      ]
-    },
-    {
-      "name": "Footer",
-      "category": "section",
-      "keywords": [
-        "global", "copyright", "copy", "license", "credits"
+        "columns", 
+        "cards", 
+        "tile"
       ]
     }
   ]

@@ -1,0 +1,126 @@
+{
+  "directory": {
+    "sutter-health-lps": [
+    {
+      "site-name": "Birthing Tour",
+      "location": "/lp/birthingtour",
+      "status": "live",
+      "components": [
+        {
+          "name": "Sticky Nav",
+          "type": "global",
+          "data": "/config/data.json",
+          "helpers": "/helpers/sticky-nav.js",
+          "styles": "/scss/styles.scss"
+        },
+        {
+          "name": "Full Width Hero",
+          "type": "hero",
+          "data": "/config/data.json",
+          "styles": "/scss/styles.scss",
+          "helpers": "/helpers/sticky-nav.js"
+        },
+        {
+          "name": "Find a Birthing Center Near You",
+          "type": "widget",
+          "data": "/config/data.json",
+          "styles": "/scss/styles.scss",
+          "dependencies": [
+            "typeahead",
+            "clear-selection",
+            "geozip",
+            "google-maps",
+            "brightcove"
+          ],
+          "helpers": "/helpers/birthing-centers.js"
+        },
+        {
+          "name": "Doctor Carousel",
+          "type": "widget",
+          "data": "/config/data.json",
+          "styles": "/scss/styles.scss",
+          "options": {
+            "dynamic-results": true,
+            "search": false,
+            "specialties": [
+              "OB/Gyn",
+              "Nurse Midwife"
+            ],
+            "show-all-link": true
+          },
+          "dependencies": [
+            "geozip",
+            "google-maps"
+          ],
+          "helpers": "/helpers/doctor-carousel.js"
+        },
+        {
+          "name": "Solid Color CTA",
+          "type": "section",
+          "data": "/config/data.json",
+          "styles": "/scss/styles.scss",
+          "helpers": "/helpers/doctor-carousel.js"
+        },
+        {
+          "name": "Social Farm",
+          "type": "footer",
+          "data": "/config/data.json",
+          "styles": "/scss/styles.scss",
+          "helpers": "/helpers/social-farm.js"
+        },
+        {
+          "name": "Default Footer",
+          "type": "footer",
+          "data": "/config/data.json",
+          "helpers": "/helpers/footer.js",
+          "styles": "/scss/footer.scss"
+        }
+      ]
+    },
+    {
+      "site-name": "Annual Report 2019",
+      "location": "/annualreport-2019",
+      "status": "staged",
+      "components": [
+        {
+          "name": "Sticky Nav",
+          "type": "global",
+          "data": "/config/data.json",
+          "styles": "/scss/styles.scss",
+          "helpers": "/helpers/sticky-nav.js"
+        },
+        {
+          "name": "Full Width Hero",
+          "type": "hero",
+          "data": "/config/data.json",
+          "styles": "/scss/styles.scss",
+          "helpers": "/helpers/sticky-nav.js"
+        },
+        {
+          "name": "Solid Color CTA",
+          "type": "section",
+          "data": "/config/data.json",
+          "styles": "/scss/styles.scss",
+          "helpers": "/helpers/doctor-carousel.js"
+        },
+        {
+          "name": "Timeline",
+          "type": "widget",
+          "data": [
+            "/config/data.json",
+            "/config/moments.json"
+          ],
+          "styles": "/scss/styles.scss",
+          "helpers": "/helpers/timeline.js"
+        },
+        {
+          "name": "Icon Row Module",
+          "type": "section",
+          "data": "/config/data.json",
+          "helpers": "/helpers/icon-row.js"
+        }
+      ]
+    }
+  ]
+  }
+}

@@ -1,5 +1,6 @@
-// GLOBAL STYLES //
+// GLOBAL DEPENDENCIES //
 import './style.scss';
+import Components from './config.json';
 
 // COMPONENTS //
 // Navigation
@@ -13,10 +14,9 @@ import Cards from './components/card-row/config/data.json';
 
 // PARTIALS //
 // Search w/ Autocomplete
-import './partials/typeahead/assets/awesomeplete.js';
-import './partials/typeahead/assets/awesomeplete.scss';
-import Results from './partials/typeahead/config/data.json';
-import { autocompleteWithKeywords } from './partials/typeahead/helpers/typeahead.js';
+import './components/typeahead/assets/awesomeplete.js';
+import './components/typeahead/assets/awesomeplete.scss';
+import { autocompleteWithKeywords } from './components/typeahead/helpers/typeahead.js';
 
 function componentNavbar() {
   const navId = {
@@ -35,7 +35,7 @@ function componentNavbar() {
   navId.elem.classList.add(navId.data);
   branding.elem.innerHTML = branding.data;
   nestedDataHelper(navLinks.data, navLinks.elem);
-  }
+}
 
 function componentHero() {
   document.querySelector('.main-text').innerHTML = Hero.hero['main-text'];
@@ -48,12 +48,11 @@ function componentCardRow() {
 
 function partialSearchWithAutocomplete() {
   const searchInput = document.getElementById('typeahead');
-  autocompleteWithKeywords(Results, searchInput)
+  autocompleteWithKeywords(Components, searchInput)
 };
 
 componentNavbar(); 
 componentHero();
 componentCardRow();
 
-partialSearchWithAutocomplete()
-
+partialSearchWithAutocomplete();

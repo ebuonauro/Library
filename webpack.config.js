@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+
 module.exports = {
   mode: 'development',
   entry: {
@@ -19,11 +20,14 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './src/templates/default.html'
+      template: './src/templates/default.html',
+      path: path.join(__dirname, './partials/analytics.html'),
+      priority: 'high',
+      location: 'head'
     }),
     new HtmlWebpackPlugin({
       filename: 'page.html',
-      template: './src/templates/default.html'
+      template: './src/templates/skins.html'
     })
   ],
   output: {
