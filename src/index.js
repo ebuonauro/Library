@@ -1,58 +1,37 @@
 // GLOBAL DEPENDENCIES //
 import './style.scss';
-import Components from './config.json';
+// import Components from './config.json';
 
 // COMPONENTS //
-// Navigation
-import { nestedDataHelper } from './components/navigation/helpers/nav.js';
-import Nav from './components/navigation/config/data.json';
-// Hero
-import Hero from './components/hero/config/data.json';
-// Cards
-import { loopThroughCards } from './components/card-row/helpers/card-row.js';
-import Cards from './components/card-row/config/data.json';
-
-// PARTIALS //
-// Search w/ Autocomplete
-import './components/typeahead/assets/awesomeplete.js';
-import './components/typeahead/assets/awesomeplete.scss';
-import { autocompleteWithKeywords } from './components/typeahead/helpers/typeahead.js';
-
-function componentNavbar() {
-  const navId = {
-          "data": Nav.navigation['nav-id'],
-          "elem": document.getElementById('nav-id')
-        },
-        branding = {
-          "data": Nav.navigation['branding'],
-          "elem": document.getElementById('branding')
-        },
-        navLinks = {
-          "data": Nav.navigation['nav']['links'],
-          "elem": document.querySelector('.navbar-nav')
-        }
-
-  navId.elem.classList.add(navId.data);
-  branding.elem.innerHTML = branding.data;
-  nestedDataHelper(navLinks.data, navLinks.elem);
-}
-
+// Jumbotron Hero
+import Hero from './components/jumbotron-hero/config/data.json';
 function componentHero() {
-  document.querySelector('.main-text').innerHTML = Hero.hero['main-text'];
-  document.querySelector('.lead-text').innerHTML = Hero.hero['lead-text'];
+  document.querySelector('.heading').innerHTML = Hero.hero['main-text'];
+  document.querySelector('.short-desc').innerHTML = Hero.hero['lead-text'];
+  document.querySelector('.cta').innerHTML = Hero.hero['button'];
 }
-
-function componentCardRow() {
-  loopThroughCards(Cards);
-}
-
-function partialSearchWithAutocomplete() {
-  const searchInput = document.getElementById('typeahead');
-  autocompleteWithKeywords(Components, searchInput)
-};
-
-componentNavbar(); 
 componentHero();
-componentCardRow();
 
-partialSearchWithAutocomplete();
+// Sticky Navigation
+import { navHelper } from './components/sticky-navigation/helpers/default.js';
+import Nav from './components/sticky-navigation/config/data.json';
+function componentStickyNav() {
+  const user = {
+    "data": Nav.navigation['user-name'],
+    "elem": document.querySelector('.user__avatar')
+  },
+  navLinks = {
+    "data": Nav.navigation['nav']['links'],
+    "elem": document.querySelector('.nav-links__container')
+  }
+  user.elem.innerHTML = user.data;
+  navHelper(navLinks.data, navLinks.elem);
+
+  if (Nav.navigation['user-rank'] === 'admin') {
+    document.querySelector('.cp-links').innerHTML = '              <li class="cp-links__admin admin"><a href="http://lintskins.jcink.net/admin.php" target="_blank">Admin CP</a></li>\
+    <li class="cp-links__mod mod"><a href="http://lintskins.jcink.net/mod.php" target="_blank">Mod CP</a></li>'
+  } else if (Nav.navigation.user-rank === 'mod') {
+    document.querySelector('.cp-links').innerHTML = '<li class="cp-links__mod mod"><a href="http://lintskins.jcink.net/mod.php" target="_blank">Mod CP</a></li>'
+  }
+}
+componentStickyNav();

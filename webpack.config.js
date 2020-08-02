@@ -27,7 +27,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'page.html',
-      template: './src/templates/skins.html'
+      template: './src/templates/default.html'
     })
   ],
   output: {

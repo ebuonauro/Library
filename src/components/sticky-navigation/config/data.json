@@ -1,0 +1,35 @@
+{
+  "navigation": {
+    "user-name": "Lint Roller",
+    "user-profile-url": "#",
+    "user-rank": "admin",
+    "nav": {
+      "links": [
+        {
+          "link-text": "Newest Posts",
+          "link-class": "newest",
+          "link-url": "#",
+          "link-type": "anchor"
+        },
+        {
+          "link-text": "Alerts",
+          "link-class": "alerts",
+          "link-url": "#",
+          "link-type": "alert-trigger"
+        },
+        {
+          "link-text": "Messages",
+          "link-class": "messages",
+          "link-url": "#",
+          "link-type": "int"
+        },
+        {
+          "link-text": "Settings",
+          "link-class": "settings",
+          "link-url": "#",
+          "link-type": "int"
+        }
+      ]
+    }
+  }
+}

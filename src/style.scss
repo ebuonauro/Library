@@ -1,17 +1,11 @@
+// @import './components/global/default-styles/default.scss';
 @import '~bootstrap';
+@import './components/global/variables.scss';
+@import './assets/icons/style.scss';
 $white: #fff;
 
-footer {
-  margin-top: 40px;
-  p {
-    color: $white;
-  }
-}
+// JUMBOTRON HERO
+@import './components/jumbotron-hero/scss/styles.scss';
 
-#options {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-
-@import './components/card-row/scss/styles.scss';
+// STICKY NAVIGATION
+@import './components/sticky-navigation/scss/styles.scss';
