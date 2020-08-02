@@ -13,7 +13,8 @@ function componentHero() {
 componentHero();
 
 // Sticky Navigation
-import { navHelper } from './components/sticky-navigation/helpers/default.js';
+import './components/sticky-navigation/helpers/logic.js';
+import { navHelper } from './components/sticky-navigation/helpers/source.js';
 import Nav from './components/sticky-navigation/config/data.json';
 function componentStickyNav() {
   const user = {
