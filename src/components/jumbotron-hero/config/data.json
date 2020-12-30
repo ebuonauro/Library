@@ -1,7 +1,39 @@
 {
+  "settings": {
+    "carousel": true,
+    "carousel-speed": "fast",
+    "carousel-navigation": true,
+    "carousel-autoplay": false
+  },
   "hero": {
-    "main-text": "Bootstrap for Jcink",
-    "lead-text": "This is a test skin, made to experiment with making a beautiful, simple, mobile-friendly, user-first forum skin.",
+    "main-text": "New Old Fashion",
+    "lead-text": "Modern, mobile-friendly, reader-first front-end framework for Jcink forums.",
     "button": "Report a Bug"
+  },
+  "about": {
+    "quick-links": {
+      "title": "Quick Links",
+      "links": [
+        {
+          "text": "Git version control"
+        },
+        {
+          "text": "Bootstrap"
+        },
+        {
+          "text": "Webpack"
+        },
+        {
+          "text": "ES6 and Babel"
+        },
+        {
+          "text": "Report a Bug"
+        }
+      ]
+    },
+    "summary": {
+      "title": "Mission",
+      "desc": "The Librarian is a modern front-end framework for Jcink forums. This program will negate the need to build skins directly from the Admin CP Panel. Instead, you can use this framework to build a local copy of Jcink on your computer using a local live-reloading server through Webpack. Build new skins in a fraction of the time by using and customizing many built-in modules."
+    }
   }
 }

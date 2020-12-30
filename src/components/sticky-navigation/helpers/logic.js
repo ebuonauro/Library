@@ -1,19 +1,38 @@
-function stickyNavScrollLogic() {
-  let lastScroll = 0;
-  const elementTarget = document.getElementById("hero");
-  if (window.scrollY >= (elementTarget.offsetTop + elementTarget.offsetHeight) - 100) {
-    document.querySelector('.bootstrap').classList.add('sticky');
+const  stickyMenu = document.querySelector('#sticky');
+
+function stickyNavScrollLogic(heightFromTop) {
+  let currentScrollPos = document.documentElement.scrollTop;
+  if (currentScrollPos > heightFromTop) {
+    stickyMenu.classList.add('stuck');
+  } else {
+    stickyMenu.classList.remove('stuck');
   }
 }
 
-function throttleScrollListener(logic, wait) {
-  let time = Date.now();
-  return function() {
-    if ((time + wait - Date.now()) < 0) {
-      logic();
-      time = Date.now();
-    }
+function scrollController() {
+  // Find the sticky nav menu then calculate height
+  let stickyTriggerPos = stickyMenu.offsetHeight;
+
+  // Find component above sticky nav calculate height
+  if (stickyMenu.previousElementSibling != null) {
+    const prevEl = stickyMenu.previousElementSibling;
+    stickyTriggerPos = stickyTriggerPos += (prevEl.offsetHeight - 20);
   }
+
+  // Sticky trigger position is when the menu should become 'sticky'
+  stickyNavScrollLogic(stickyTriggerPos);
 }
 
-window.addEventListener('scroll', throttleScrollListener(stickyNavScrollLogic, 200));
+setTimeout(function(){
+  window.addEventListener('scroll', function(){
+    scrollController();
+  });
+  window.addEventListener('resize', function(){
+    scrollController();
+  });
+}, 100);
+
+
+
+
+

@@ -8,8 +8,28 @@
   &__container {
     position: relative;
     height: 0;
-    padding-bottom: 25%;
-    &--about {
+    padding-bottom: 400px;
+    &:after {
+      content: '';
+      background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+      display: block;
+      transform: rotate(60deg);
+      position: absolute;
+      right: -30%;
+      height: 100%;
+      width: 2000px;
+      z-index: 1;
+    }
+    &--figure {
+      background: url('./assets/images/librarian.png') no-repeat center/100%;
+      height: 390px;
+      width: 500px;
+      position: absolute;
+      right: 0;
+      bottom: -20px;
+      z-index: 9;
+    }
+    &--content {
       position: absolute;
       left: 0;
       top: 50%;
@@ -25,15 +45,107 @@
       }
     }
   }
-  &:after {
-    content: '';
-    background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
-    display: block;
-    transform: rotate(60deg);
+}
+
+// Carousel styles
+.jumbotron-hero__container-carousel {
+  .next, .prev {
+    background: none;
+    outline: none;
+    border: none;
+    box-shadow: none;
     position: absolute;
-    right: -15%;
-    height: 100%;
-    width: 2000px;
-    z-index: 1;
+    bottom: 20px;
+    right: 45%;
+    z-index: 10;
+    transform: translateX(50%);
+    &:before {
+      background-color: darken($lightBlue, 10%);
+      border-radius: 50%;
+      color: $white;
+      content: '\e93b';
+      font-family: 'icons';
+      display: block;
+      transform: rotate(-90deg);
+      font-size: 48px;
+      width: 72px;
+      transition: background-color 350ms, color 350ms;
+      z-index: 2;
+    }
+    &:hover {
+      &:before {
+        background-color: $white;
+        color: $black;
+        transition: background-color 350ms, color 350ms;
+      }
+    }
+    &.pulse {
+      &:after {
+        content: '';
+        border-radius: 50%;
+        border: 3px solid rgba($white, 0.25);
+        width: 77px;
+        height: 77px;
+        position: absolute;
+        top: -1px;
+        left: 3px;
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: center;
+        animation-name: gentlePulse;
+        animation-duration: 2s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        z-index: -1;
+      }
+    }
+    &.highlight {
+      &:before {
+        background: linear-gradient(to bottom, #f6d365 0%, #d67358 100%);
+        color: $black;
+        transition: background-color 350ms, color 350ms;
+      }
+    }
+  }
+  .prev {
+    &:before {
+      transform: rotate(90deg);
+    }
+  }
+  &.slide1 {
+    .jumbotron-hero__container--content {
+      display: none;
+      &:first-child {
+        display: block;
+      }
+    }
+  }
+  &.slide2 {
+    .jumbotron-hero__container--content {
+      display: none;
+      &:nth-child(2) {
+        display: block;
+      }
+    }
+  }
+  &.slide3 {
+    .jumbotron-hero__container--content {
+      display: none;
+      &:nth-child(3) {
+        display: block;
+      }
+    }
+  }
+}
+
+@keyframes gentlePulse {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.3);
   }
 }
