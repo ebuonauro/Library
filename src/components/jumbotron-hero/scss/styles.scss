@@ -1,3 +1,5 @@
+$navHeight: 68px; 
+
 // Jumbotron Style Hero
 // These seem to be pretty popular on skins so let's make this
 .jumbotron-hero {
@@ -8,7 +10,8 @@
   &__container {
     position: relative;
     height: 0;
-    padding-bottom: 25%;
+    padding-bottom: 30%;
+    margin-top: $navHeight;
     &--about {
       position: absolute;
       left: 0;

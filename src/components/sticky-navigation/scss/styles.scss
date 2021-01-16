@@ -1,28 +1,31 @@
 .animated-sticky-navigation {
-  background-color: $defaultSectionBGColor;
-  color: $defaultTextColor;
+  color: $defaultWhite;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
   &__container {
     display: flex;
     list-style-type: none;
     justify-content: space-between;
+    padding: 0;
     padding-top: 5px;
+    margin-bottom: 0;
     .user {
       font-weight: 700;
       font-size: 18px;
       position: relative;
-      padding-left: 80px;
-      padding-top: 0;
-      padding-bottom: 5px;
+      padding: 5px 0 5px 65px;
       &:before {
         content: '\e971';
         background-color: darken($defaultSectionBGColor, 10%);
         border-radius: 50%;
         font-family: 'icons';
         font-size: $defaultFontSize;
-        padding: 25px 28px;
+        padding: 15px 18px;
         position: absolute;
         left: 0;
-        top: -20px;
+        top: 0;
       }
       ul {
         list-style-type: none;
@@ -35,7 +38,15 @@
           padding-top: 0;
           @include supplementalInfo();
           a {
-            color: darken($defaultLinkColor, 10%);
+            background: none;
+            @include disableBackgroundClip();
+            color: rgba($defaultWhite, 0.8);
+            transition: color 250ms;
+            &:hover {
+              text-decoration: none;
+              color: rgba($defaultWhite, 1);
+              transition: color 250ms;
+            }
           }
         }
       }

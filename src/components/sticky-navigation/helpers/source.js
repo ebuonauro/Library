@@ -16,16 +16,16 @@ function writeLinkWithLogic(linkData) {
       linkHTML;
   switch (thisLinkType) {
     case 'anchor':
-      linkHTML = '<a href="' + thisLinkURL + '"> ' + thisLinkText + '</a>';
+      linkHTML = '<a class="simple" href="' + thisLinkURL + '"> ' + thisLinkText + '</a>';
       break;
     case 'ext':
-      linkHTML = '<a href="' + thisLinkURL + '" rel="ext" target="_blank"> ' + thisLinkText + '</a>';
+      linkHTML = '<a class="simple" href="' + thisLinkURL + '" rel="ext" target="_blank"> ' + thisLinkText + '</a>';
       break;
     case 'int': 
-      linkHTML = '<a href="' + thisLinkURL + '" target="_blank"> ' + thisLinkText + '</a>';
+      linkHTML = '<a class="simple" href="' + thisLinkURL + '" target="_blank"> ' + thisLinkText + '</a>';
       break;
     case 'alert-trigger':
-      linkHTML = '<a id="alert-trigger" href="' + thisLinkURL + '"> ' + thisLinkText + '</a>';
+      linkHTML = '<a class="simple" id="alert-trigger" href="' + thisLinkURL + '"> ' + thisLinkText + '</a>';
   }
   return linkHTML;
 }
