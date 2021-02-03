@@ -7,49 +7,16 @@
     list-style-type: none;
     justify-content: space-between;
     padding-top: 5px;
-    .user {
-      font-weight: 700;
-      font-size: 18px;
-      position: relative;
-      padding-left: 80px;
-      padding-top: 0;
-      padding-bottom: 5px;
-      &:before {
-        content: '\e971';
-        background-color: darken($defaultSectionBGColor, 10%);
-        border-radius: 50%;
-        font-family: 'icons';
-        font-size: $defaultFontSize;
-        padding: 25px 28px;
-        position: absolute;
-        left: 0;
-        top: -20px;
-      }
-      ul {
-        list-style-type: none;
-        padding: 0;
-        text-align: left;
-        position: relative;
-        top: -7px;
-        min-height: 15px;
-        li {
-          padding-top: 0;
-          @include supplementalInfo();
-          a {
-            color: darken($defaultLinkColor, 10%);
-          }
-        }
-      }
-    }
     .nav-links {
       &__container {
         list-style-type: none;
         display: flex;
+        padding-left: 0;
         li {
           margin-right: $defaultPadding;
           line-height: 1.5;
           text-align: center;
-          padding-top: 15px;
+          padding: 4px 0 10px;
           &:last-child {
             margin-right: 0;
           }
@@ -59,27 +26,21 @@
         }
       }
     }
-    .settings {
-      &:before {
-        content: '\e97d';
-        font-family: 'icons';
-      }
-    }
     .newest {
       &:before {
-        content: '\e968';
+        content: '\e959';
         font-family: 'icons';
       }
     }
-    .messages {
+    .articles {
       &:before {
-        content: '\e96e';
+        content: '\e95c';
         font-family: 'icons';
       }
     }
-    .alerts {
+    .components {
       &:before {
-        content: '\e970';
+        content: '\e960';
         font-family: 'icons';
       }
     }
