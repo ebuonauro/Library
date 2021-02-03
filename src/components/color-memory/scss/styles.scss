@@ -1,0 +1,18 @@
+.color-memory {
+  padding: 200px 0;
+  text-align: center;
+  .container {
+    padding: 0;
+  }
+  &__intro {
+    margin: auto;
+  }
+  .instructions {
+    font-size: 18px;
+    max-width: 500px;
+    margin: 0 auto 32px;
+  }
+  .cta-secondary {
+    @include secondaryCTAButton;
+  }
+}
