@@ -1,0 +1,13 @@
+{
+  "intro": {
+    "heading": "Color Memory",
+    "desc": "Test your memory and knowledge of color with this simple guessing game. Can you memorize a color and pick it out of a line up?",
+    "cta-text": "Begin"
+  },
+  "instructions": "You will be shown a square of color for 15 seconds. Afterwards, you must pick the color that matches the color you just saw.",
+  "results": {
+    "correct-text": "You guessed the color! Congrats, play again?",
+    "incorrect-text": "Sorry you didn't quite get that right, what to try again?"
+  }
+
+}

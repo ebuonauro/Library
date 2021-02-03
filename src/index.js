@@ -7,9 +7,9 @@ import './style.scss';
 import Hero from './components/jumbotron-hero/config/data.json';
 import './components/jumbotron-hero/helpers/logic.js';
 function componentHero() {
-  document.querySelector('.heading').innerHTML = Hero.hero['main-text'];
-  document.querySelector('.short-desc').innerHTML = Hero.hero['lead-text'];
-  document.querySelector('.cta').innerHTML = Hero.hero['button'];  
+  document.querySelector('.jumbotron-heading').innerHTML = Hero.hero['main-text'];
+  document.querySelector('.jumbotron-short-desc').innerHTML = Hero.hero['lead-text'];
+  document.querySelector('.jumbotron-cta').innerHTML = Hero.hero['button'];  
 }
 componentHero();
 
@@ -23,6 +23,16 @@ function componentStickyNav() {
     "elem": document.querySelector('.nav-links__container')
   }
   navHelper(navLinks.data, navLinks.elem);
-
 }
 componentStickyNav();
+
+// Color Memory
+import './components/color-memory/helpers/logic.js';
+import ColorMemory from './components/color-memory/config/data.json';
+function componentColorMemory() {
+  document.querySelector('.cm-heading').innerHTML = ColorMemory.intro.heading;
+  document.querySelector('.cm-lead').innerHTML = ColorMemory.intro.desc;
+  document.querySelector('.cm-cta').innerHTML = ColorMemory.intro['cta-text'];
+  document.querySelector('.cm-instructions').innerHTML = ColorMemory.instructions;
+}
+componentColorMemory();
