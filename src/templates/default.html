@@ -38,23 +38,17 @@
               <button type="button" class="cm-cta cta-secondary" id="cm-step1"></button>
             </div>
             <div class="color-memory__game state-2 d-none">
-              <p class="cm-instructions instructions">You will be shown a square of color for 15 seconds. Afterwards, you must pick the color that matches the color you just saw.</p>
-              <button type="button" class="cm-cta-step-2 cta-secondary" id="cm-step2">I'm ready!</button>
-              <div class="game">
+              <div class="instructions">
+                <p class="cm-instructions">You will be shown a square of color for 15 seconds. Afterwards, you must pick the color that matches the color you just saw.</p>
+                <button type="button" class="cm-cta-step-2 cta-secondary" id="cm-step2">I'm ready!</button>
+              </div>
+              <div class="game d-none">
                 <div class="color-memory__game--swatch"></div>
                 <div class="color-memory__game--timer"></div>
               </div>
               </div>
               <div class="color-memory__choices state-3 d-none">
-                <ul>
-                  <li class="color-memory__choices--swatch"></li>
-                  <li class="color-memory__choices--swatch"></li>
-                  <li class="color-memory__choices--swatch"></li>
-                  <li class="color-memory__choices--swatch"></li>
-                  <li class="color-memory__choices--swatch"></li>
-                  <li class="color-memory__choices--swatch"></li>
-                  <li class="color-memory__choices--swatch"></li>
-                  <li class="color-memory__choices--swatch"></li>
+                <ul id="color-choices">
                 </ul>
               </div>
               <div class="color-memory__results state-4 d-none">
