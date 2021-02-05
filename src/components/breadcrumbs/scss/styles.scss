@@ -1,0 +1,24 @@
+// BREADCRUMBS
+.breadcrumbs {
+  padding: 15px 0;
+  margin-bottom: 60px;
+  a {
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    font-size: $betaFontSize;
+    font-weight: 500;
+  }
+  .icon-home1 {
+    font-size: $omegaFontSize;
+    color: $darkGray;
+    padding-right: 5px;
+  }
+  .icon-chevron-small-down {
+    margin: 0 15px;
+    font-size: $omegaFontSize;
+    font-weight: 700;
+    display: inline-block;
+    transform: rotate(-90deg);
+  }
+}
