@@ -9,38 +9,19 @@
       <section id="hero" class="jumbotron-hero">
         <div class="jumbotron-hero__container container">
           <figure class="jumbotron-hero__container--figure"></figure>
-          <div class="jumbotron-hero__container-carousel slide1">
-            <div class="jumbotron-hero__container--content intro slide1">
-              <h1 class="heading"></h1>
-              <p class="short-desc"></p>
-              <a class="cta" href="#" target="_blank"></a>
+          <div class="jumbotron-hero__container-carousel">
+            <div class="jumbotron-hero__container--content intro">
+              <h1 class="heading jumbotron-heading"></h1>
+              <p class="short-desc jumbotron-short-desc"></p>
+              <a class="cta jumbotron-cta" href="#" target="_blank"></a>
             </div>
-            <div class="jumbotron-hero__container--content about slide2">
-              <ul class="quick-links">
-                <li class="quick-links__title">Quick Links</li>
-                <li>Git version control</li>
-                <li>Git version control</li>
-                <li>Git version control</li>
-                <li>Git version control</li>
-                <li>Git version control</li>
-              </ul>
-              <div class="summary">
-                <h2 class="summary__title">Mission</h2>
-                <p>The Librarian is a modern front-end framework for Jcink forums. This program will negate the need to build skins directly from the Admin CP Panel. Instead, you can use this framework to build a local copy of Jcink on your computer using a local live-reloading server through Webpack. Build new skins in a fraction of the time by using and customizing many built-in modules.</p>
-              </div>
             </div>
-            <button id="carousel-nav" class="next nav" aria-label="Go to next slide"></button>
           </div>
         </div>
       </section>
+
       <nav id="sticky" class="animated-sticky-navigation">
         <ul class="animated-sticky-navigation__container container">
-          <li class="animated-sticky-navigation__container--user user">
-            Welcome, <a class="user__avatar" href="/link-to-profile.html" target="_blank"></span>
-            </a>
-            <ul class="cp-links">
-            </ul>
-          </li>
           <li class="nav-links">
             <ul class="nav-links__container">
             </ul>
@@ -48,149 +29,44 @@
         </ul>
       </nav>
 
-<div class="container forum">
-<!-- 
-  <section class="interactive-hero-trigger active">
-    <h1 class="heading">Here's some text or something</h1>
-    <div class="interactive-grid">
-      <ul>
-        <li class="grid-1">
-          <h2 class="grid-header">Here's some more text</h2>
-          <span class="desc">Lorem ipsum whatever blah blah cats</span>
-        </li>
-        <li class="grid-2">
-          <h2 class="grid-header">Here's some more text</h2>
-          <span class="desc">Lorem ipsum whatever blah blah cats</span>
-        </li>
-        <li class="grid-3">
-          <h2 class="grid-header">Here's some more text</h2>
-          <span class="desc">Lorem ipsum whatever blah blah cats</span>
-        </li>
-        <li class="grid-4">
-          <h2 class="grid-header">Here's some more text</h2>
-          <span class="desc">Lorem ipsum whatever blah blah cats</span>
-        </li>
-        <li class="grid-5">
-          <h2 class="grid-header">Here's some more text</h2>
-          <span class="desc">Lorem ipsum whatever blah blah cats</span>
-        </li>
-        <li class="grid-6">
-          <h2 class="grid-header">Here's some more text</h2>
-          <span class="desc">Lorem ipsum whatever blah blah cats</span>
-        </li>
-      </ul>
-    </div>
-  </section> -->
+      <section id="recent" class="recent-projects"> 
+        <div class="color-memory " id="color-memory">
+          <div class="container">
+            <div class="color-memory__intro state-1 col-lg-6">
+              <h2 class="heading cm-heading"></h2>
+              <p class="lead cm-lead"></p>
+              <button type="button" class="cm-cta cta-secondary" id="cm-step1"></button>
+            </div>
+            <div class="color-memory__game state-2 d-none">
+              <p class="cm-instructions instructions">You will be shown a square of color for 15 seconds. Afterwards, you must pick the color that matches the color you just saw.</p>
+              <button type="button" class="cm-cta-step-2 cta-secondary" id="cm-step2">I'm ready!</button>
+              <div class="game">
+                <div class="color-memory__game--swatch"></div>
+                <div class="color-memory__game--timer"></div>
+              </div>
+              </div>
+              <div class="color-memory__choices state-3 d-none">
+                <ul>
+                  <li class="color-memory__choices--swatch"></li>
+                  <li class="color-memory__choices--swatch"></li>
+                  <li class="color-memory__choices--swatch"></li>
+                  <li class="color-memory__choices--swatch"></li>
+                  <li class="color-memory__choices--swatch"></li>
+                  <li class="color-memory__choices--swatch"></li>
+                  <li class="color-memory__choices--swatch"></li>
+                  <li class="color-memory__choices--swatch"></li>
+                </ul>
+              </div>
+              <div class="color-memory__results state-4 d-none">
+                <p class="result"></p>
+              </div>
+            </div>
 
-  <div class="breadcrumbs">
-    <span class="icon-home1"></span><a href="http://lintskins.jcink.net/index.php?act=idx">Forum Home</a> <span class="icon-chevron-small-down"></span>
-    <a href="#">Category</a> <span class="icon-chevron-small-down"></span>
-    <a href="#">Topic</a> <span class="icon-chevron-small-down"></span>
-    <a href="#">Thread</a>
-  </div>
+        </div>
+      </section>
 
 
-  <div class="tableborder category" id="cat-1">
-<div class='maintitle' align='left'>
-<span style='float:right;'><a href='#' onclick='catcollapse("1");return false;' id='main_1'><img alt='Collapse' title='Collapse' src='//files.jcink.net/themes/default/cat-collapse.png' /></a>&nbsp;&nbsp;</span>
-<a href="http://lintskins.jcink.net/index.php?c=1">A Test Category</a></div>
-<div id='cat_1' style="">
-  <table width="100%" border="0" cellspacing="1" cellpadding="4">
-    <tr class='forum-subheader'>
-      <th align="center" width="2%" class='titlemedium'><img src="style_images/1/spacer.gif" alt="" width="28" height="1" /></th>
-      <th align="left" width="59%" class='titlemedium'>Forum</th>
-      <th align="center" width="7%" class='titlemedium'>Topics</th>
-      <th align="center" width="7%" class='titlemedium'>Replies</th>
-      <th align="left" width="25%" class='titlemedium'>Last Post Info</th>
-    </tr>        <tr class='forum-row'> 
-      <td class="row4" align="center"><img alt="No New Posts" title="No New Posts" src="//files.jcink.net/themes/default/white-cube-large.png" /></td>
-      <td class="row4"><b><a class="tooltip" tooltip="" href="http://lintskins.jcink.net/index.php?showforum=1" alt="A Test Forum">A Test Forum</a></b> <br /><span class='desc'><span class='forum-desc'></span><br /><span class='forum-led-by'></span></span></td>
-      <td class="row2" align="center">1</td>
-      <td class="row2" align="center">0</td>
-      <td class="row2" nowrap="nowrap">Oct 20 2019, 08:42 PM<br />In:&nbsp;<a href='http://lintskins.jcink.net/index.php?showtopic=1&amp;view=getlastpost' title='Go to the last post'><img src="//files.jcink.net/themes/default/double-arrow.gif" /></a><a href='http://lintskins.jcink.net/index.php?showtopic=1&amp;view=getnewpost' title='Welcome To Your New Forum'>Welcome To Your New Forum</a><br />By: <a href='http://lintskins.jcink.net/index.php?showuser=1'>emily</a></td>
-    </tr>         <tr> 
-      <td class='darkrow2' colspan="5">&nbsp;</td>
-    </tr>
-  </table>
-</div>
-</div>
-<br class='cat-lb' />	<div class="tableborder category" id="cat-2">
-<div class='maintitle' align='left'>
-<span style='float:right;'><a href='#' onclick='catcollapse("2");return false;' id='main_2'><img alt='Collapse' title='Collapse' src='//files.jcink.net/themes/default/cat-collapse.png' /></a>&nbsp;&nbsp;</span>
-<a href="http://lintskins.jcink.net/index.php?c=2">Trashcan</a></div>
-<div id='cat_2' style="">
-  <table width="100%" border="0" cellspacing="1" cellpadding="4">
-    <tr class='forum-subheader'>
-      <th align="center" width="2%" class='titlemedium'><img src="style_images/1/spacer.gif" alt="" width="28" height="1" /></th>
-      <th align="left" width="59%" class='titlemedium'>Forum</th>
-      <th align="center" width="7%" class='titlemedium'>Topics</th>
-      <th align="center" width="7%" class='titlemedium'>Replies</th>
-      <th align="left" width="25%" class='titlemedium'>Last Post Info</th>
-    </tr>        <tr class='forum-row'> 
-      <td class="row4" align="center"><img alt="No New Posts" title="No New Posts" src="//files.jcink.net/themes/default/white-cube-large.png" /></td>
-      <td class="row4"><b><a class="tooltip" tooltip="Deleted posts will be found here." href="http://lintskins.jcink.net/index.php?showforum=2" alt="Trash Can">Trash Can</a></b> <br /><span class='desc'><span class='forum-desc'>Deleted posts will be found here.</span><br /><span class='forum-led-by'></span></span></td>
-      <td class="row2" align="center">0</td>
-      <td class="row2" align="center">0</td>
-      <td class="row2" nowrap="nowrap">--<br />In:&nbsp;----<br />By: </td>
-    </tr>         <tr> 
-      <td class='darkrow2' colspan="5">&nbsp;</td>
-    </tr>
-  </table>
-</div>
-</div>
-<br class='cat-lb' />	<!-- RECENT.TOPICS --><!-- Board Stats -->	
-<div id='quick-login'>
-<!-- |quick_login| -->
-</div>
-<br />
-  <div align='center' class='toplinks'>
-<a href='http://lintskins.jcink.net/index.php?act=Stats&amp;CODE=leaders'>The moderating team</a> |
-<a href='http://lintskins.jcink.net/index.php?act=Search&amp;CODE=getactive'>Today's active topics</a> |	
-<a href='http://lintskins.jcink.net/index.php?act=Stats'>Today's top 10 posters</a> | <a href='http://lintskins.jcink.net/index.php?act=Members&amp;max_results=10&amp;sort_key=posts&amp;sort_order=desc'>Overall top 10 posters</a>
-</div>
-<br />
-<div class="tableborder" id="boardstats">
-<div class="maintitle"><span class='bstats-text'>Board Statistics</span></div>
-<table cellpadding='4' cellspacing='1' border='0' width='100%'>        <tr>
-<td class='pformstrip' colspan='2'>1 user(s) active in the past 15 minutes</td>
-  </tr>
-  <tr>
-      <td width="5%" class='row2'><img alt="Users" title="Users" src="//files.jcink.net/themes/default/active-users.png" /></td>
-      <td class='row4' width='95%'>
-  <span id='activeusers-stats'><b>0</b> guests, <b>1</b> members, <b>0</b> anonymous members</span>
-  <div class='thin'><a href='http://lintskins.jcink.net/index.php?showuser=1'>emily</a></div>
-        <span id='activeusers-links'>Show detailed by: <a href='http://lintskins.jcink.net/index.php?act=Online&amp;CODE=listall&amp;sort_key=click'>Last Click</a>, <a href='http://lintskins.jcink.net/index.php?act=Online&amp;CODE=listall&amp;sort_key=name&amp;sort_order=asc&amp;show_mem=reg'>Member Name</a></span>
-      </td>
-    </tr>
-    <!--IBF.WHOSCHATTING-->        <tr>
-       <td class='pformstrip' colspan='2'>Today's Birthdays</td>
-  </tr>
-  <tr>
-      <td class='row2' width='5%' valign='middle'><img alt="Users" title="Users" src="//files.jcink.net/themes/default/active-users.png" /></td>
-      <td class='row4' width='95%'><b></b> No members are celebrating a birthday today<br /></td>
-    </tr>		   <tr>
-     <td class='pformstrip' colspan='2'>Board Statistics</td>
-   </tr>
-   <tr>
-   <td class='row2' width='5%' valign='middle'><img alt="Statistics" title="Statistics" src="//files.jcink.net/themes/default/statistics.png" /></td>
-   <td class='row4' width="95%" align='left'>Our members have made a total of <b>1</b> posts<br />We have <b>1</b> registered members<br />The newest member is <b><a href='http://lintskins.jcink.net/index.php?showuser=1'>emily</a></b><br />Most users ever online was <b>3</b> on <b>Oct 20 2019, 08:42 PM</b></td>
-   </tr>	<tr>
-<td class='pformstrip' colspan='2'>Members Online Today: 1 <span id='mot_explink' style='display:none'>[<a href='javascript:expand_mot()'>Expand</a>]</span><span id='mot_collink' style='display:inline'>[<a href='javascript:collapse_mot()'>Collapse</a>]</span></td>
-</tr>
-<tr id='mot' style='display:inline-compact'>
-<td class='row2' width='5%' valign='middle'><img alt="Users" title="Users" src="//files.jcink.net/themes/default/active-users.png" /></td>
-<td class='row4' width='95%'><span id='activeusers-mostevertxt'>Most members ever online in one day was <b>1</b>, last accomplished on <b>Today</b></span><br /><br /><span id='activeusers-followingtxt'>The following members have visited today:</span><br /><a title='Last Active: 1 seconds ago' href='http://lintskins.jcink.net/index.php?showuser=1'>emily</a></td>
-</tr>         </table>
-</div>
-<!-- Board Stats -->   <br />
-<div align='right' id='delcookiesrow'><a href="http://lintskins.jcink.net/index.php?act=Login&amp;CODE=06">Delete cookies set by this board</a> &middot; <a href="http://lintskins.jcink.net/index.php?act=Login&amp;CODE=05">Mark all posts as read</a></div> 
-  <!-- Copyright Information -->
 
-<div align='center' class='tableborder'><div class='row4' style='font-size: 7.5pt; padding-top: 1px; padding-bottom: 1px; line-height: 8pt;'><div align='center' class='copyright'>Powered by <a href="https://www.invisionboard.com" target='_blank'>Invision Power Board</a> (<a href="http://jcink.com" target="_blank">Jcink.com </a> <a href="https://jcink.com" target="_blank">Forum Hosting</a>) &copy; 2020 &nbsp;<a href='https://www.invisionpower.com' target='_blank'>IPS, Inc.</a> <br />Page creation time: 1.5102 <!-- http://lintskins.b1.jcink.com -->  &middot; <a href='index.php?act=Mobile'>Mobile Version</a> &middot; <a href='index.php?act=privacy'>Privacy Policy</a></div></div></div> <script src='//files.jcink.net/html/quickedit/common.c.js'></script><script src='//files.jcink.net/html/quickedit/qe.js'></script>   	
-
-</div>
-
-
-	</main>
-    </body> 
+	  </main>
+  </body> 
 </html>

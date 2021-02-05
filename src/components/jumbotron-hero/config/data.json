@@ -1,13 +1,7 @@
 {
-  "settings": {
-    "carousel": true,
-    "carousel-speed": "fast",
-    "carousel-navigation": true,
-    "carousel-autoplay": false
-  },
   "hero": {
-    "main-text": "New Old Fashion",
-    "lead-text": "Modern, mobile-friendly, reader-first front-end framework for Jcink forums.",
+    "main-text": "The Library",
+    "lead-text": "This is a dump of various code snippets and small applications. It's like a meme dump, but not nearly as fun, sorry. Just pretend cats are in here too.",
     "button": "Report a Bug"
   },
   "about": {
