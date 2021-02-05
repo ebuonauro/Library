@@ -1,3 +1,4 @@
+// @import './components/global/default-styles/default.scss';
 @import '~bootstrap';
 @import './components/global/variables.scss';
 @import './assets/icons/style.scss';
@@ -9,11 +10,14 @@ $white: #fff;
 // STICKY NAVIGATION
 @import './components/sticky-navigation/scss/styles.scss';
 
-// COLOR MEMORY
-@import './components/color-memory/scss/styles.scss';
+// BREADCRUMBS
+@import './components/breadcrumbs/scss/styles.scss';
 
 
-// Global styles
+
+
+
+// Just a test, let's see what happens
 body {
   overflow-x: hidden;
 }
