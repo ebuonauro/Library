@@ -3,10 +3,8 @@
   color: $defaultTextColor;
   transition: all 250ms;
   &__container {
-    display: flex;
-    list-style-type: none;
-    justify-content: space-between;
     padding-top: 5px;
+    list-style-type: none;
     .user {
       font-weight: 700;
       font-size: 18px;
@@ -46,42 +44,24 @@
         list-style-type: none;
         display: flex;
         padding: 0;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        @media (min-width: 768px) {
+          width: 720px;
+          justify-content: space-between;
+        }
         li {
-          margin-right: $defaultPadding;
           line-height: 1.5;
           text-align: center;
           padding: 4px 0 11px;
-          &:last-child {
-            margin-right: 0;
+          width: calc(50% - #{$defaultPadding});
+          @media (min-width: 992px) {
+            width: calc(25% - #{$defaultPadding});
           }
           &:before {
             font-size: $betaFontSize;
           }
         }
-      }
-    }
-    .settings {
-      &:before {
-        content: '\e97d';
-        font-family: 'icons';
-      }
-    }
-    .newest {
-      &:before {
-        content: '\e968';
-        font-family: 'icons';
-      }
-    }
-    .messages {
-      &:before {
-        content: '\e96e';
-        font-family: 'icons';
-      }
-    }
-    .alerts {
-      &:before {
-        content: '\e970';
-        font-family: 'icons';
       }
     }
   }
@@ -100,15 +80,6 @@
     transition: all 250ms;
     .container {
       padding-top: 0;
-    }
-    .user {
-      padding-left: 80px;
-      padding-top: 7px;
-      padding-bottom: 5px;
-      &:before {
-        padding: 25px 28px;
-        top: 4px;
-      }
     }
   }
 }
