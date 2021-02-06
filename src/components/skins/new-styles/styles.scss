@@ -1,19 +1,38 @@
+
+
+
+// Animated sticky navigation
+// Nav should be fixed to top until you scroll to meet it
+// Then it should hide when you're scrolling down
+// It should show when you're scrolling up or if you move your mouse to where the nav would be
 .animated-sticky-navigation {
   background-color: $defaultSectionBGColor;
   color: $defaultTextColor;
-  transition: all 250ms;
   &__container {
     display: flex;
     list-style-type: none;
-    justify-content: space-between;
     padding-top: 5px;
+    li {
+      margin-right: $defaultPadding;
+      line-height: 1.5;
+      text-align: center;
+      padding-top: 15px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:before {
+        font-size: $betaFontSize;
+      }
+    }
     .user {
       font-weight: 700;
       font-size: 18px;
       position: relative;
       padding-left: 80px;
-      padding-top: 0;
-      padding-bottom: 5px;
+      padding-top: 5px;
+      @media (min-width: 1200px) {
+        margin-right: 415px;
+      }
       &:before {
         content: '\e971';
         background-color: darken($defaultSectionBGColor, 10%);
@@ -30,31 +49,12 @@
         padding: 0;
         text-align: left;
         position: relative;
-        top: -7px;
-        min-height: 15px;
+        top: -10px;
         li {
           padding-top: 0;
           @include supplementalInfo();
           a {
             color: darken($defaultLinkColor, 10%);
-          }
-        }
-      }
-    }
-    .nav-links {
-      &__container {
-        list-style-type: none;
-        display: flex;
-        li {
-          margin-right: $defaultPadding;
-          line-height: 1.5;
-          text-align: center;
-          padding-top: 15px;
-          &:last-child {
-            margin-right: 0;
-          }
-          &:before {
-            font-size: $betaFontSize;
           }
         }
       }
@@ -81,32 +81,6 @@
       &:before {
         content: '\e970';
         font-family: 'icons';
-      }
-    }
-  }
-}
-
-// Sticky version
-.animated-sticky-navigation {
-  &.stuck {
-    box-shadow: 5px 0 25px rgba($black, 0.15);
-    background-color: $white;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 9;
-    height: 65px;
-    transition: all 250ms;
-    .container {
-      padding-top: 0;
-    }
-    .user {
-      padding-left: 80px;
-      padding-top: 7px;
-      padding-bottom: 5px;
-      &:before {
-        padding: 25px 28px;
-        top: 4px;
       }
     }
   }
