@@ -45,11 +45,12 @@
       &__container {
         list-style-type: none;
         display: flex;
+        padding: 0;
         li {
           margin-right: $defaultPadding;
           line-height: 1.5;
           text-align: center;
-          padding-top: 15px;
+          padding: 4px 0 11px;
           &:last-child {
             margin-right: 0;
           }

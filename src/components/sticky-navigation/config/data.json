@@ -1,33 +1,30 @@
 {
   "navigation": {
-    "user-name": "Lint Roller",
-    "user-profile-url": "#",
-    "user-rank": "admin",
     "nav": {
       "links": [
         {
-          "link-text": "Newest Posts",
-          "link-class": "newest",
+          "link-text": "About Hex Codes",
+          "link-class": "primer",
           "link-url": "#",
           "link-type": "anchor"
         },
         {
-          "link-text": "Alerts",
-          "link-class": "alerts",
+          "link-text": "Generating Color",
+          "link-class": "generator",
           "link-url": "#",
-          "link-type": "alert-trigger"
+          "link-type": "anchor"
         },
         {
-          "link-text": "Messages",
-          "link-class": "messages",
+          "link-text": "Color Memory Game",
+          "link-class": "game",
           "link-url": "#",
-          "link-type": "int"
+          "link-type": "anchor"
         },
         {
-          "link-text": "Settings",
-          "link-class": "settings",
+          "link-text": "Color Contrast",
+          "link-class": "contrast",
           "link-url": "#",
-          "link-type": "int"
+          "link-type": "anchor"
         }
       ]
     }
