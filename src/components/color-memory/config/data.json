@@ -1,13 +1,35 @@
 {
   "intro": {
-    "heading": "Color Memory",
-    "desc": "Test your memory and knowledge of color with this simple guessing game. Can you memorize a color and pick it out of a line up?",
-    "cta-text": "Begin Here"
+    "heading": "Test Your Color Accuracy",
+    "desc": "Put your knowledge of color to the test! I'll show you a randomly generated swatch of color for 10 seconds. Do you think you could memorize that color and pick it out from a lineup of similar colors?",
+    "cta-text": "Let's Get Started!"
   },
-  "instructions": "You will be shown a square of color for 15 seconds. Afterwards, you must pick the color that matches the color you just saw.",
+  "game": {
+    "phase-1": {
+      "instructions": "I will show you a color in the box below for 10 seconds. Do your best to memorize that color before the time limit expires. Begin by selecting a difficulty...",
+      "difficulty": ["warm-up", "normal", "expert"],
+      "count-down": 3
+    },
+    "phase-2": {
+      "instructions": "Memorize this color...",
+      "timer": 10
+    },
+    "phase-3": {
+      "instructions": "Select the color you just saw."
+    }
+  },
   "results": {
-    "correct-text": "You guessed the color! Congrats, play again?",
-    "incorrect-text": "Sorry you didn't quite get that right, what to try again?"
+    "win": "Congratulations, that's the exact right color!",
+    "lose": {
+      "close": {
+        "more-red": "You were very close, but the color you chose has more red than the original. Try again?",
+        "less-red": "You were very close, but the color you chose has less red than the original. Try again?",
+        "more-green": "You were very close, but the color you chose has more green than the original. Try again?",
+        "less-green": "You were very close, but the color you chose has less green than the original. Try again?",
+        "more-blue": "You were very close, but the color you chose has more blue than the original. Try again?",
+        "less-blue": "You were very close, but the color you chose has less blue than the original. Try again?"
+      },
+      "far": "Sorry, the color you chose was pretty off. Want to try again?"
+    }
   }
-
 }

@@ -25,3 +25,11 @@ function componentStickyNav() {
   navHelper(navLinks.data, navLinks.elem);
 }
 componentStickyNav();
+
+// Color Memory
+import colorMemory from './components/color-memory/config/data.json';
+import './components/color-memory/helpers/logic.js';
+function componentColorMemory() {
+
+}
+componentColorMemory();
