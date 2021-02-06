@@ -7,7 +7,11 @@
   "game": {
     "phase-1": {
       "instructions": "I will show you a color in the box below for 10 seconds. Do your best to memorize that color before the time limit expires. Begin by selecting a difficulty...",
-      "difficulty": ["warm-up", "normal", "expert"],
+      "difficulty": {
+        "easy": "Warm-Up",
+        "normal": "Normal",
+        "hard": "Expert"
+      },
       "count-down": 3
     },
     "phase-2": {

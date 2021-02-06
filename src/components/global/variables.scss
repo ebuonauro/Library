@@ -31,6 +31,10 @@ $omegaFontSize: 12px;
   }
 }
 
+button {
+  cursor: pointer;
+}
+
 a {
   background-image: linear-gradient(90deg, #3F2B96 0%, #3F2B96 100%);
   -webkit-background-clip: text;

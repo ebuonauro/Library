@@ -18,6 +18,7 @@
           </div>
         </div>
       </section>
+
       <nav id="sticky" class="animated-sticky-navigation">
         <ul class="animated-sticky-navigation__container container">
           <li class="nav-links">
@@ -27,35 +28,43 @@
         </ul>
       </nav>
 
-      <section id="recent" class="recent-projects"> 
-        <div class="color-memory " id="color-memory">
-          <div class="container">
-            <div class="color-memory__intro state-1 col-lg-6">
-              <p class="lead cm-lead"></p>
-              <button type="button" class="cm-cta cta-secondary" id="cm-step1"></button>
+      <section class="color-memory intro" id="color-memory"> 
+        <div class="container">
+          <!-- Introduction -->
+          <div class="color-memory__intro intro">
+            <h2 class="color-memory__intro--heading"></h2>
+            <p class="color-memory__intro--desc"></p>
+            <button class="color-memory__intro--cta" role="button"></button>
+          </div>
+          <!-- Game: Phase 1  -->
+          <div class="color-memory__phase1 phase1">
+            <p class="color-memory__phase1--instructions"></p>
+            <div class="inner-container">
+              <button class="color-memory__phase1--easy" role="button"></button>
+              <button class="color-memory__phase1--normal" role="button"></button>
+              <button class="color-memory__phase1--hard" role="button"></button>
             </div>
-            <div class="color-memory__game state-2 d-none">
-              <div class="instructions">
-                <p class="cm-instructions">You will be shown a square of color for 15 seconds. Afterwards, you must pick the color that matches the color you just saw.</p>
-                <button type="button" class="cm-cta-step-2 cta-secondary" id="cm-step2">I'm ready!</button>
-              </div>
-              <div class="game d-none">
-                <div class="color-memory__game--swatch"></div>
-                <div class="color-memory__game--timer"></div>
-              </div>
-              </div>
-              <div class="color-memory__choices state-3 d-none">
-                <ul id="color-choices">
-                </ul>
-              </div>
-              <div class="color-memory__results state-4 d-none">
-                <p class="result"></p>
-              </div>
+          </div>
+          <!-- Game: Phase 2 -->
+          <div class="color-memory__phase2 phase2">
+            <p class="color-memory__phase2--instructions"></p>
+            <span class="color-memory__phase2--swatch"></span>
+            <div class="color-memory__phase2--countdown">
             </div>
+          </div>
+          <!-- Game: Phase 3 -->
+          <div class="color-memory__phase3 phase3">
+            <p class="color-memory__phase3--instructions"></p>
+            <ul class="color-memory__phase3--choices"></ul>
+          </div>
+          <!-- Results -->
+          <div class="color-memory__results results">
+            <p class="color-memory__results--condition"></p>
+            <button class="color-memory__results--cta" role="button">Try Again</button>
+          </div>
+        </div>
+      </section>
 
- 
-
-
-	</main>
-    </body> 
+    </main>
+  </body> 
 </html>

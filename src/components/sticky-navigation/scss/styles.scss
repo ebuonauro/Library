@@ -5,6 +5,7 @@
   &__container {
     padding-top: 5px;
     list-style-type: none;
+    margin-bottom: 0;
     .user {
       font-weight: 700;
       font-size: 18px;
@@ -76,7 +77,7 @@
     width: 100%;
     top: 0;
     z-index: 9;
-    height: 65px;
+    height: auto;
     transition: all 250ms;
     .container {
       padding-top: 0;
