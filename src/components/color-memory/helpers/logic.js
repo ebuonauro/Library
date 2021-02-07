@@ -22,6 +22,7 @@ function selectDifficulty() {
 
 function selectEasyGame() {
   resetGameState();
+
   gameContainer.classList.add(gameStates[2]);
   createRandomColor();
 }
@@ -41,9 +42,9 @@ function createRandomColor() {
 
   for (i = 0; i < 5; i++) {
     let relativeColor = createMoreRelativeColors(randomColor);
-    colorChoicesElem.innerHTML += '<input type="radio" id="color-' + i + '" name="color-choice" class="color-choice"><label for="color-' + i + '" style="background-color: ' + relativeColor + ';"></label>';
+    colorChoicesElem.innerHTML += '<input type="radio" id="color-' + i + '" name="color-choice" class="color-choice" data-color="' + relativeColor + '"><label for="color-' + i + '" style="background-color: ' + relativeColor + ';"></label>';
   }
-  colorChoicesElem.innerHTML += '<input type="radio" id="color-' + i + '" name="color-choice" class="color-choice"><label for="color-' + i + '" style="background-color: #' + randomColor + ';"></label>';
+  colorChoicesElem.innerHTML += '<input type="radio" id="color-' + i + '" name="color-choice" class="color-choice" data-color="#' + randomColor + '"><label for="color-' + i + '" style="background-color: #' + randomColor + ';"></label>';
 
   correctColor = randomColor;
   shuffleChoices();
@@ -109,7 +110,7 @@ function determineResults() {
   var choice = null;
   for (i = 0; i < choices.length; i++) {
     choices[i].onclick = function() {
-      choice = this.innerHTML;
+      choice = this.dataset.color;
       if (choice == '#' + correctColor) {
         document.querySelector('.color-memory__results--condition').innerHTML = 'You chose the correct color, congratulations!'
       } else {
@@ -118,6 +119,8 @@ function determineResults() {
       resetGameState();
       gameContainer.classList.add(gameStates[4]);
       document.querySelector('.color-memory__results--cta').addEventListener('click', startGame);
+      console.log(choice, correctColor);
+      document.querySelector('.color-memory__phase3--choices').innerHTML = '';
     }
   }
 }
