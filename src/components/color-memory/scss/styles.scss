@@ -4,7 +4,6 @@
   background-color: lighten($lightBlue, 10%);
   padding: 100px 0;
   &__intro {
-    margin-bottom: 200px;
     &--heading {
       font-weight: 700;
     }
@@ -17,7 +16,6 @@
     }
   }
   &__phase1 {
-    margin-bottom: 200px;
     &--instructions {
       font-size: 18px;
       max-width: 600px;
@@ -28,7 +26,6 @@
     }
   }
   &__phase2 {
-    margin-bottom: 200px;
     &--instructions {
       font-size: 18px;
       max-width: 600px;
