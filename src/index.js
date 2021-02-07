@@ -18,22 +18,33 @@ import './components/sticky-navigation/helpers/logic.js';
 import { navHelper } from './components/sticky-navigation/helpers/source.js';
 import Nav from './components/sticky-navigation/config/data.json';
 function componentStickyNav() {
-  const user = {
-    "data": Nav.navigation['user-name'],
-    "elem": document.querySelector('.user__avatar')
-  },
-  navLinks = {
+  const navLinks = {
     "data": Nav.navigation['nav']['links'],
     "elem": document.querySelector('.nav-links__container')
   }
-  user.elem.innerHTML = user.data;
   navHelper(navLinks.data, navLinks.elem);
-
-  if (Nav.navigation['user-rank'] === 'admin') {
-    document.querySelector('.cp-links').innerHTML = '<li class="cp-links__admin admin"><a href="http://lintskins.jcink.net/admin.php" target="_blank">Admin CP</a></li>\
-    <li class="cp-links__mod mod"><a href="http://lintskins.jcink.net/mod.php" target="_blank">Mod CP</a></li>'
-  } else if (Nav.navigation.user-rank === 'mod') {
-    document.querySelector('.cp-links').innerHTML = '<li class="cp-links__mod mod"><a href="http://lintskins.jcink.net/mod.php" target="_blank">Mod CP</a></li>'
-  }
 }
 componentStickyNav();
+
+// Color Memory
+import colorMemory from './components/color-memory/config/data.json';
+import './components/color-memory/helpers/logic.js';
+function componentColorMemory() {
+  // Introduction
+  document.querySelector('.color-memory__intro--heading').innerHTML = colorMemory.intro.heading;
+  document.querySelector('.color-memory__intro--desc').innerHTML = colorMemory.intro.desc;
+  document.querySelector('.color-memory__intro--cta').innerHTML = colorMemory.intro['cta-text'];
+
+  // Game Phase 1
+  document.querySelector('.color-memory__phase1--instructions').innerHTML = colorMemory.game['phase-1'].instructions;
+  document.querySelector('.color-memory__phase1--easy').innerHTML = colorMemory.game['phase-1'].difficulty.easy;
+  document.querySelector('.color-memory__phase1--normal').innerHTML = colorMemory.game['phase-1'].difficulty.normal;
+  document.querySelector('.color-memory__phase1--hard').innerHTML = colorMemory.game['phase-1'].difficulty.hard;
+
+  // Game Phase 2
+  document.querySelector('.color-memory__phase2--instructions').innerHTML = colorMemory.game['phase-2'].instructions;
+
+  // Game Phase 3
+  document.querySelector('.color-memory__phase3--instructions').innerHTML = colorMemory.game['phase-3'].instructions;
+}
+componentColorMemory();
