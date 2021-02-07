@@ -52,7 +52,12 @@
       list-style-type: none;
       width: 100%;
       padding: 0;
-      li {
+      input {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      label {
         cursor: pointer;
         width: calc(33.333% - 15px);
         height: 200px;

@@ -41,9 +41,9 @@ function createRandomColor() {
 
   for (i = 0; i < 5; i++) {
     let relativeColor = createMoreRelativeColors(randomColor);
-    colorChoicesElem.innerHTML += '<li style="background-color: ' + relativeColor + ';">' + relativeColor + '</li>';
+    colorChoicesElem.innerHTML += '<input type="radio" id="color-' + i + '" name="color-choice" class="color-choice"><label for="color-' + i + '" style="background-color: ' + relativeColor + ';"></label>';
   }
-  colorChoicesElem.innerHTML += '<li style="background-color: #' + randomColor + ';">#' + randomColor + '</li>';
+  colorChoicesElem.innerHTML += '<input type="radio" id="color-' + i + '" name="color-choice" class="color-choice"><label for="color-' + i + '" style="background-color: #' + randomColor + ';"></label>';
 
   correctColor = randomColor;
   shuffleChoices();
@@ -54,17 +54,14 @@ function resetGameState() {
 }
 
 function setProgressBar(elem, duration, color) {
-  // Grab current progress bar, add inner elem and give it the random color
   var progressBarElem = document.querySelector(elem);
   var progressBarInner = document.querySelector('.progress')
   progressBarInner.style.background = '#' + color;
 
-  // Set the animation duration, append the inner elem to parent, set animation state
   progressBarInner.style.animationDuration = duration;
   progressBarElem.appendChild(progressBarInner);
   progressBarInner.style.animationPlayState = 'running';
 
-  // Once done, set a callback function to animate in the color choices
   progressBarInner.addEventListener('animationend', showColorChoices);
 }
 
@@ -108,18 +105,19 @@ function nextLetter(s){
 }
 
 function determineResults() {
-  var choices = document.querySelector('.color-memory__phase3--choices li');
+  var choices = document.querySelectorAll('.color-choice');
   var choice = null;
-  choices.addEventListener('click', function() {
-    console.log('bar');
-    choice = this.innerHTML;
-    if (choice == '#' + correctColor) {
-      document.querySelector('.color-memory__results--condition').innerHTML = 'You chose the correct color, congratulations!'
-    } else {
-      document.querySelector('.color-memory__results--condition').innerHTML = 'Sorry that was incorrect.'
+  for (i = 0; i < choices.length; i++) {
+    choices[i].onclick = function() {
+      choice = this.innerHTML;
+      if (choice == '#' + correctColor) {
+        document.querySelector('.color-memory__results--condition').innerHTML = 'You chose the correct color, congratulations!'
+      } else {
+        document.querySelector('.color-memory__results--condition').innerHTML = 'Sorry that was incorrect.'
+      }
+      resetGameState();
+      gameContainer.classList.add(gameStates[4]);
+      document.querySelector('.color-memory__results--cta').addEventListener('click', startGame);
     }
-    resetGameState();
-    gameContainer.classList.add(gameStates[4]);
-    document.querySelector('.color-memory__results--cta').addEventListener('click', startGame);
-  })
+  }
 }
