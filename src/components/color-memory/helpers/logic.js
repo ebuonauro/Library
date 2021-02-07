@@ -69,9 +69,9 @@ function setProgressBar(elem, duration, color) {
 }
 
 function showColorChoices() {
-  console.log('animation ended, now show the color choices obviously');
   resetGameState();
   gameContainer.classList.add(gameStates[3]);
+  determineResults();
 }
 
 function shuffleChoices() {
@@ -107,7 +107,15 @@ function nextLetter(s){
   });
 }
 
-
+function determineResults() {
+  var choices = document.querySelector('.color-memory__phase3--choices li');
+  var choice = null;
+  choices.addEventListener('click', function() {
+    console.log(this.innerHTML);
+    resetGameState();
+    gameContainer.classList.add(gameStates[4]);
+  })
+}
 
 
 
