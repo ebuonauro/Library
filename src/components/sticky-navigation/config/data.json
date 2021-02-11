@@ -5,25 +5,19 @@
         {
           "link-text": "About Hex Codes",
           "link-class": "primer",
-          "link-url": "#",
-          "link-type": "anchor"
-        },
-        {
-          "link-text": "Generating Color",
-          "link-class": "generator",
-          "link-url": "#",
+          "link-url": "#primer",
           "link-type": "anchor"
         },
         {
           "link-text": "Color Memory Game",
           "link-class": "game",
-          "link-url": "#",
+          "link-url": "#game",
           "link-type": "anchor"
         },
         {
-          "link-text": "Color Contrast",
-          "link-class": "contrast",
-          "link-url": "#",
+          "link-text": "Generating Color",
+          "link-class": "generator",
+          "link-url": "#generator",
           "link-type": "anchor"
         }
       ]

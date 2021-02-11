@@ -3,9 +3,9 @@
   color: $defaultTextColor;
   transition: all 250ms;
   &__container {
-    padding-top: 5px;
     list-style-type: none;
     margin-bottom: 0;
+    padding: 0;
     .user {
       font-weight: 700;
       font-size: 18px;
@@ -26,7 +26,6 @@
       }
       ul {
         list-style-type: none;
-        padding: 0;
         text-align: left;
         position: relative;
         top: -7px;
@@ -44,21 +43,17 @@
       &__container {
         list-style-type: none;
         display: flex;
-        padding: 0;
         flex-wrap: wrap;
         justify-content: space-around;
+        padding: 8px 0;
         @media (min-width: 768px) {
-          width: 720px;
+          width: 540px;
           justify-content: space-between;
         }
         li {
           line-height: 1.5;
           text-align: center;
-          padding: 4px 0 11px;
-          width: calc(50% - #{$defaultPadding});
-          @media (min-width: 992px) {
-            width: calc(25% - #{$defaultPadding});
-          }
+          width: calc(33.333% - #{$defaultPadding});
           &:before {
             font-size: $betaFontSize;
           }
