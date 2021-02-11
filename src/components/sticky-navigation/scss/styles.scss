@@ -48,17 +48,14 @@
         flex-wrap: wrap;
         justify-content: space-around;
         @media (min-width: 768px) {
-          width: 720px;
+          width: 540px;
           justify-content: space-between;
         }
         li {
           line-height: 1.5;
           text-align: center;
           padding: 4px 0 11px;
-          width: calc(50% - #{$defaultPadding});
-          @media (min-width: 992px) {
-            width: calc(25% - #{$defaultPadding});
-          }
+          width: calc(33.333% - #{$defaultPadding});
           &:before {
             font-size: $betaFontSize;
           }

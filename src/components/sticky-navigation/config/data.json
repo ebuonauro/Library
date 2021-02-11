@@ -19,12 +19,6 @@
           "link-class": "game",
           "link-url": "#",
           "link-type": "anchor"
-        },
-        {
-          "link-text": "Color Contrast",
-          "link-class": "contrast",
-          "link-url": "#",
-          "link-type": "anchor"
         }
       ]
     }

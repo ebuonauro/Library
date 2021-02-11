@@ -103,3 +103,16 @@ body {
     }
   }
 }
+
+article {
+  .container {
+    padding: 50px 25px;
+    p {
+      max-width: 768px;
+      margin-bottom: 30px;
+    }
+    h2 {
+      margin-bottom: 15px;
+    }
+  }
+}

@@ -22,7 +22,6 @@ function selectDifficulty() {
 
 function selectEasyGame() {
   resetGameState();
-
   gameContainer.classList.add(gameStates[2]);
   createRandomColor();
 }
@@ -36,15 +35,19 @@ function selectHardGame() {
 }
 
 function createRandomColor() {
-  const randomColor = Math.floor(Math.random()*16777215).toString(16);
-  document.querySelector('.color-memory__phase2--swatch').style.background = '#' + randomColor;
+  const validChars = '0123456789ABCDEF';
+  let randomColor = '#';
+  for (i = 0; i < 6; i++) {
+    randomColor += validChars[Math.floor(Math.random() * 16)];
+  }
+  document.querySelector('.color-memory__phase2--swatch').style.background = randomColor;
   setProgressBar('.color-memory__phase2--countdown', '5s', randomColor);
 
   for (i = 0; i < 5; i++) {
     let relativeColor = createMoreRelativeColors(randomColor);
     colorChoicesElem.innerHTML += '<input type="radio" id="color-' + i + '" name="color-choice" class="color-choice" data-color="' + relativeColor + '"><label for="color-' + i + '" style="background-color: ' + relativeColor + ';"></label>';
   }
-  colorChoicesElem.innerHTML += '<input type="radio" id="color-' + i + '" name="color-choice" class="color-choice" data-color="#' + randomColor + '"><label for="color-' + i + '" style="background-color: #' + randomColor + ';"></label>';
+  colorChoicesElem.innerHTML += '<input type="radio" id="color-' + i + '" name="color-choice" class="color-choice" data-color="' + randomColor + '"><label for="color-' + i + '" style="background-color:' + randomColor + ';"></label>';
 
   correctColor = randomColor;
   shuffleChoices();
@@ -57,7 +60,7 @@ function resetGameState() {
 function setProgressBar(elem, duration, color) {
   var progressBarElem = document.querySelector(elem);
   var progressBarInner = document.querySelector('.progress')
-  progressBarInner.style.background = '#' + color;
+  progressBarInner.style.background = color;
 
   progressBarInner.style.animationDuration = duration;
   progressBarElem.appendChild(progressBarInner);
@@ -80,7 +83,7 @@ function shuffleChoices() {
 }
 
 function createMoreRelativeColors(color) {
-  let randColorSplit = color.split('');
+  let randColorSplit = color.substring(1,color.length).split('');
   let newColor = '';
   randColorSplit.forEach(function(i){
     if ([i].toString().match(/[a-z]/i)) {
@@ -111,7 +114,7 @@ function determineResults() {
   for (i = 0; i < choices.length; i++) {
     choices[i].onclick = function() {
       choice = this.dataset.color;
-      if (choice == '#' + correctColor) {
+      if (choice == correctColor) {
         document.querySelector('.color-memory__results--condition').innerHTML = 'You chose the correct color, congratulations!'
       } else {
         document.querySelector('.color-memory__results--condition').innerHTML = 'Sorry that was incorrect.'
