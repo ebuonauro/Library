@@ -1,5 +1,11 @@
 @import './progress-bar.scss';
 
+.article {
+  ol {
+    margin-bottom: 30px;
+  }
+}
+
 .color-memory {
   background-color: lighten($lightBlue, 10%);
   padding: 100px 0;
@@ -55,6 +61,7 @@
         position: absolute;
         left: 0;
         top: 0;
+        opacity: 0;
       }
       label {
         cursor: pointer;
@@ -68,6 +75,23 @@
   &__results {
     &--cta {
       @include primaryCTAButton();
+    }
+    &--condition {
+      .color-group {
+        display: inline-block;
+        margin-right: 30px;
+        .label {
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 700;
+          display: block;
+        }
+        .color-swatch {
+          height: 200px;
+          width: 200px;
+          display: block;
+        }
+      }
     }
     &__game {
       &--swatch {
@@ -94,6 +118,7 @@
         margin-bottom: 16px;
       }
     }
+
   }
 }
 

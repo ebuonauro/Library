@@ -23,34 +23,89 @@ function selectDifficulty() {
 function selectEasyGame() {
   resetGameState();
   gameContainer.classList.add(gameStates[2]);
-  createRandomColor();
+  createRandomColor('easy');
 }
 
 function selectNormalGame() {
-  console.log('normal');
+  resetGameState();
+  gameContainer.classList.add(gameStates[2]);
+  createRandomColor('normal');
 }
 
 function selectHardGame() {
-  console.log('hard');
+  resetGameState();
+  gameContainer.classList.add(gameStates[2]);
+  createRandomColor('hard');
 }
 
-function createRandomColor() {
-  const validChars = '0123456789ABCDEF';
-  let randomColor = '#';
-  for (i = 0; i < 6; i++) {
-    randomColor += validChars[Math.floor(Math.random() * 16)];
+function createRandomColor(difficulty) {
+  let rgbChars = [];
+  for (i = 0; i < 3; i++) {
+    rgbChars.push(Math.floor(Math.random() * 256));
   }
-  document.querySelector('.color-memory__phase2--swatch').style.background = randomColor;
-  setProgressBar('.color-memory__phase2--countdown', '5s', randomColor);
+  let newColor = 'rgb(' + rgbChars[0] + ',' + rgbChars[1] + ',' + rgbChars[2] + ')';
+  
+  document.querySelector('.color-memory__phase2--swatch').style.background = newColor;
+  setProgressBar('.color-memory__phase2--countdown', '5s', newColor);
 
   for (i = 0; i < 5; i++) {
-    let relativeColor = createMoreRelativeColors(randomColor);
-    colorChoicesElem.innerHTML += '<input type="radio" id="color-' + i + '" name="color-choice" class="color-choice" data-color="' + relativeColor + '"><label for="color-' + i + '" style="background-color: ' + relativeColor + ';"></label>';
-  }
-  colorChoicesElem.innerHTML += '<input type="radio" id="color-' + i + '" name="color-choice" class="color-choice" data-color="' + randomColor + '"><label for="color-' + i + '" style="background-color:' + randomColor + ';"></label>';
 
-  correctColor = randomColor;
+    if (difficulty == 'easy') {
+      let variance = 80;
+      let relativeColor = createMoreRelativeColors(rgbChars, variance);
+      colorChoicesElem.innerHTML += '<input type="radio" id="color-' + i + '" name="color-choice" class="color-choice" data-color="' + relativeColor+ '"><label for="color-' + i + '" style="background-color: ' + relativeColor + ';"></label>';
+    } else if (difficulty == 'normal') {
+      let variance = 40;
+      let relativeColor = createMoreRelativeColors(rgbChars, variance);
+      colorChoicesElem.innerHTML += '<input type="radio" id="color-' + i + '" name="color-choice" class="color-choice" data-color="' + relativeColor+ '"><label for="color-' + i + '" style="background-color: ' + relativeColor + ';"></label>';
+    } else if (difficulty == 'hard') {
+      let variance = 20;
+      let relativeColor = createMoreRelativeColors(rgbChars, variance);
+      colorChoicesElem.innerHTML += '<input type="radio" id="color-' + i + '" name="color-choice" class="color-choice" data-color="' + relativeColor+ '"><label for="color-' + i + '" style="background-color: ' + relativeColor + ';"></label>';
+    }
+  }
+  colorChoicesElem.innerHTML += '<input type="radio" id="color-' + i + '" name="color-choice" class="color-choice" data-color="' + newColor + '"><label for="color-' + i + '" style="background-color:' + newColor + ';"></label>';
+
+  correctColor = newColor;
   shuffleChoices();
+}
+
+function createMoreRelativeColors(colorArray, variance) {
+  let relativeColorArray = [];
+  colorArray.forEach(function(i){
+    calculateMinMaxVariance(i, variance);
+    relativeColorArray.push(Math.round(Math.random() * (finalMinMax[1] - finalMinMax[0]) + finalMinMax[0]));
+  });
+  return 'rgb(' + relativeColorArray[0] + ',' + relativeColorArray[1] + ',' + relativeColorArray[2] + ')';
+}
+
+function calculateMinMaxVariance(colorValue, variance) {
+  let minMaxValues = [],
+      addToMax     = 0,
+      addToMin     = 0;
+
+  // Set Minimum value
+  if (colorValue - variance <= 0) {
+    addToMax = (colorValue - variance) * -1;
+    minMaxValues.push(0);
+  } else {
+    minMaxValues.push(colorValue - variance);
+  }
+
+  // Set maximum value
+  if (colorValue + variance >= 255) {
+    addToMin = (colorValue + variance) - 255;
+    minMaxValues.push(255)
+  } else {
+    minMaxValues.push(colorValue + variance);
+  }
+
+  // Add in extra values if needed
+  let min = minMaxValues[0] + addToMin,
+      max = minMaxValues[1] + addToMax;
+      finalMinMax = [min, max];
+  
+  return finalMinMax;
 }
 
 function resetGameState() {
@@ -82,42 +137,42 @@ function shuffleChoices() {
   }
 }
 
-function createMoreRelativeColors(color) {
-  let randColorSplit = color.substring(1,color.length).split('');
-  let newColor = '';
-  randColorSplit.forEach(function(i){
-    if ([i].toString().match(/[a-z]/i)) {
-      newColor += nextLetter([i].toString());
-    } else if ([i].toString().match(/[0-8]/i)) {
-      newColor += Math.random().toString().substring(5,6);
-    } else {
-      newColor += [i];
-    }
-  });
-  return '#' + newColor;
-}
-
-function nextLetter(s){
-  return s.replace(/([a-fA-F])[^a-fA-F]*$/, function(a){
-    var c= a.charCodeAt(0);
-    switch(c){
-      case 70: return 'A';
-      case 102: return 'a';
-      default: return String.fromCharCode(++c);
-    }
-  });
-}
-
 function determineResults() {
   var choices = document.querySelectorAll('.color-choice');
   var choice = null;
   for (i = 0; i < choices.length; i++) {
     choices[i].onclick = function() {
       choice = this.dataset.color;
+      let choiceAsArray = choice.substring(4,choice.length - 1).split(',');
+      let correctColorAsArray = correctColor.substring(4,choice.length - 1).split(',');
+
       if (choice == correctColor) {
-        document.querySelector('.color-memory__results--condition').innerHTML = 'You chose the correct color, congratulations!'
+        document.querySelector('.color-memory__results--condition').innerHTML = 
+        '<h2 class="heading">Congratulations, you chose the correct color!</h2>\
+        <div class="color-group">\
+        <span class="label">Correct Color</span>\
+        <span class="color-swatch" style="background-color:' + correctColor + '"></span>\
+        </div>\
+        <div class="color-group">\
+        <span class="label">Chosen Color</span>\
+        <span class="color-swatch" style="background-color:' + choice + '"></span>\
+        </div>'
       } else {
-        document.querySelector('.color-memory__results--condition').innerHTML = 'Sorry that was incorrect.'
+        const redOffByValue = choiceAsArray[0] - correctColorAsArray[0];
+        const greenOffByValue = choiceAsArray[1] - correctColorAsArray[1];
+        const blueOffByValue = choiceAsArray[2] - correctColorAsArray[2];
+        document.querySelector('.color-memory__results--condition').innerHTML = '<h2 class="heading">Sorry, you chose the wrong color.</h2>\
+        <p>Your red value was off by ' + redOffByValue + '</p>\
+        <p>Your green value was off by ' + greenOffByValue + '</p>\
+        <p>Your blue value was off by ' + blueOffByValue + '</p>\
+        <div class="color-group">\
+        <span class="label">Correct Color</span>\
+        <span class="color-swatch" style="background-color:' + correctColor + '"></span>\
+        </div>\
+        <div class="color-group">\
+        <span class="label">Chosen Color</span>\
+        <span class="color-swatch" style="background-color:' + choice + '"></span>\
+        </div>'
       }
       resetGameState();
       gameContainer.classList.add(gameStates[4]);
